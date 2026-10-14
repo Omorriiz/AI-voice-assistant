@@ -1,0 +1,35 @@
+#pragma once
+
+// ============ Wi-Fi ============
+#define WIFI_SSID       "WIFI"        
+#define WIFI_PASSWORD   "PASS"          
+
+// ============ Сервер ============
+// IP-адрес компьютера, на котором запущен server.py (протокол WebSocket не менялся)
+#define WS_SERVER_IP    "IP"     
+#define WS_SERVER_PORT  8000
+#define WS_SERVER_PATH  "/nils/v1/"
+
+// ============ Аудио ============
+#define SAMPLE_RATE         16000
+#define MAX_RECORD_SECONDS  10
+#define MAX_SAMPLES         (SAMPLE_RATE * MAX_RECORD_SECONDS)
+#define AUDIO_CHUNK_BYTES   2048
+
+// ============ Пины I2S (для INMP441 — микрофон) ============
+#define I2S_MIC_BCK   17
+#define I2S_MIC_WS    18
+#define I2S_MIC_DIN   16
+
+// ============ Пины I2S (для MAX98357A — усилитель) ============
+#define I2S_AMP_BCLK  5
+#define I2S_AMP_LRC   6
+#define I2S_AMP_DIN   7
+
+// ============ Ключевое слово ============
+// Кнопки больше нет: запись начинается по слову «Привет ESP» и заканчивается
+// паузой в речи. Тонкая настройка — VAD_END_SILENCE_MS / NO_SPEECH_TIMEOUT_MS в main/main.c.
+
+// ============ Микрофон (необязательно) ============
+// #define MIC_SHIFT 14              // усиление: 16 = как есть, 14 = +12 dB, 13 = +18 dB
+// #define MIC_USE_RIGHT_CHANNEL 1   // если L/R пин INMP441 подключён к 3.3 V

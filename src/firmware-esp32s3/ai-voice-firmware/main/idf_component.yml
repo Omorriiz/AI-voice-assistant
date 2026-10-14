@@ -1,0 +1,9 @@
+dependencies:
+  # Проект написан под ESP-IDF 5.x (в 6.x cJSON вынесен из IDF и изменился mbedtls)
+  idf: ">=5.3,<6.0"
+  espressif/esp_websocket_client: "^1.4.0"
+  # wn10_ru_privetesp («Привет ESP») есть в master esp-sr; в релизе 2.6.0 его может не быть.
+  # Когда выйдет релиз с этим словом, можно заменить на версию из реестра: espressif/esp-sr: ">=2.7.0"
+  esp-sr:
+    git: https://github.com/espressif/esp-sr.git
+    version: master
